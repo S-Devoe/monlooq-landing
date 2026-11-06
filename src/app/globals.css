@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  MonlooQ marketing site.
+
+  The tokens are the operations console's (monlooq-admin-web), which in turn
+  borrow the mobile app's accent: one burnt orange on a zero-chroma stack of
+  whites in light mode, a warm ink in dark mode. Degular Display for headings,
+  Mona Sans for everything else.
+*/
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-soft: var(--brand-soft);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  /*
+    Degular first, Mona Sans immediately behind it. The Demo cuts of Degular
+    carry only A–Z a–z 0–9 space comma full-stop, so the browser falls back
+    per glyph for punctuation instead of rendering tofu.
+  */
+  --font-heading:
+    var(--font-degular), var(--font-body), ui-sans-serif, sans-serif;
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+
+  --animate-rise: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  --animate-marquee: marquee 40s linear infinite;
+}
+
+:root {
+  --background: oklch(0.977 0 0);
+  --foreground: oklch(0.205 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.205 0 0);
+
+  --brand: oklch(0.635 0.196 36);
+  --brand-foreground: oklch(0.99 0.005 80);
+  --brand-soft: oklch(0.635 0.196 36 / 10%);
+
+  --primary: oklch(0.635 0.196 36);
+  --primary-foreground: oklch(0.99 0.005 80);
+  --secondary: oklch(0.955 0 0);
+  --secondary-foreground: oklch(0.245 0 0);
+  --muted: oklch(0.962 0 0);
+  /* Nudged darker than the console's 0.522 so small body copy clears 4.5:1. */
+  --muted-foreground: oklch(0.49 0 0);
+  --accent: oklch(0.245 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+
+  --destructive: oklch(0.562 0.208 27);
+  --success: oklch(0.58 0.128 155);
+
+  --border: oklch(0.912 0 0);
+  --input: oklch(0.9 0 0);
+  --ring: oklch(0.635 0.196 36);
+
+  --radius: 0.75rem;
+  color-scheme: light;
+}
+
+.dark {
+  --background: oklch(0.172 0.005 62);
+  --foreground: oklch(0.945 0.005 80);
+  --card: oklch(0.216 0.006 62);
+  --card-foreground: oklch(0.945 0.005 80);
+
+  --brand: oklch(0.688 0.184 38);
+  --brand-foreground: oklch(0.17 0.01 40);
+  --brand-soft: oklch(0.688 0.184 38 / 14%);
+
+  --primary: oklch(0.688 0.184 38);
+  --primary-foreground: oklch(0.17 0.01 40);
+  --secondary: oklch(0.272 0.007 62);
+  --secondary-foreground: oklch(0.945 0.005 80);
+  --muted: oklch(0.262 0.006 62);
+  --muted-foreground: oklch(0.72 0.008 76);
+  --accent: oklch(0.945 0.005 80);
+  --accent-foreground: oklch(0.172 0.005 62);
+
+  --destructive: oklch(0.672 0.186 24);
+  --success: oklch(0.702 0.132 156);
+
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.688 0.184 38);
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-heading);
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
+  ::selection {
+    background: var(--brand);
+    color: var(--brand-foreground);
+  }
+}
+
+@layer components {
+  /* All-caps micro label that opens every section, magazine masthead style. */
+  .eyebrow {
+    @apply text-[0.6875rem] leading-none font-semibold tracking-[0.16em] uppercase;
+  }
+
+  /* Hairline rules do the layout work instead of boxes-inside-boxes. */
+  .rule {
+    @apply border-border border-t;
+  }
+
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10;
+  }
+
+  /* Legal copy. Plain CSS rather than the typography plugin: one page type. */
+  .prose-legal {
+    @apply text-[0.975rem] leading-7 text-muted-foreground;
+  }
+  .prose-legal h2 {
+    @apply mt-12 mb-3 text-2xl font-semibold tracking-tight text-foreground;
+  }
+  .prose-legal h3 {
+    @apply mt-6 mb-2 text-lg font-semibold text-foreground;
+  }
+  .prose-legal p,
+  .prose-legal ul {
+    @apply mb-4;
+  }
+  .prose-legal ul {
+    @apply list-disc space-y-1.5 pl-5 marker:text-brand;
+  }
+  .prose-legal a {
+    @apply font-medium text-foreground underline decoration-brand underline-offset-4;
+  }
+  .prose-legal strong {
+    @apply font-semibold text-foreground;
+  }
+}
+
+@utility stagger-* {
+  animation-delay: calc(--value(integer) * 80ms);
+}
+
+/* Film grain over the hero. An SVG turbulence tile, so no image request. */
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  :where(.dark) &::after {
+    mix-blend-mode: screen;
+    opacity: 0.05;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-rise,
+  .animate-float,
+  .animate-marquee {
+    /* Unlayered, so it already beats the utilities layer. */
+    animation: none;
+  }
+}

@@ -1,0 +1,28 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.monlooq.app",
+      "sha256_cert_fingerprints": [
+        "41:7B:3D:41:89:84:88:A7:10:50:D6:48:4F:10:D9:D2:21:89:89:00:D6:4B:A7:BD:8C:7B:09:9F:EA:A8:0B:89",
+        "2E:C2:7E:34:8B:15:98:FE:89:52:C4:E0:8D:20:9F:0A:9D:3A:5F:9B:8D:75:F8:65:C8:0C:77:0E:CC:BF:A0:A0",
+        "7C:71:94:6B:0E:15:C7:F1:59:62:21:6F:6C:B6:81:22:17:E4:2B:C1:DB:D5:56:D8:E3:D1:FE:6A:26:13:4A:0B",
+        "8B:65:33:F6:C6:28:4A:AB:58:EE:4D:24:7B:E9:78:EF:DC:08:3D:60:01:EB:2D:13:AE:49:1E:C3:2B:08:21:C1"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.monlooq.app.staging",
+      "sha256_cert_fingerprints": [
+        "41:7B:3D:41:89:84:88:A7:10:50:D6:48:4F:10:D9:D2:21:89:89:00:D6:4B:A7:BD:8C:7B:09:9F:EA:A8:0B:89",
+        "2E:C2:7E:34:8B:15:98:FE:89:52:C4:E0:8D:20:9F:0A:9D:3A:5F:9B:8D:75:F8:65:C8:0C:77:0E:CC:BF:A0:A0",
+        "7C:71:94:6B:0E:15:C7:F1:59:62:21:6F:6C:B6:81:22:17:E4:2B:C1:DB:D5:56:D8:E3:D1:FE:6A:26:13:4A:0B",
+        "8B:65:33:F6:C6:28:4A:AB:58:EE:4D:24:7B:E9:78:EF:DC:08:3D:60:01:EB:2D:13:AE:49:1E:C3:2B:08:21:C1"
+      ]
+    }
+  }
+]

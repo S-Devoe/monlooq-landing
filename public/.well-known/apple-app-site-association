@@ -1,0 +1,30 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "JR89B3XKNL.com.monlooq.app",
+          "JR89B3XKNL.com.monlooq.app.staging"
+        ],
+        "components": [
+          {
+            "/": "/post/*",
+            "comment": "Matches single post links"
+          },
+          {
+            "/": "/p/*",
+            "comment": "Matches short post links"
+          },
+          {
+            "/": "/community/*",
+            "comment": "Matches community links"
+          },
+          {
+            "/": "/user/*",
+            "comment": "Matches profile links"
+          }
+        ]
+      }
+    ]
+  }
+}

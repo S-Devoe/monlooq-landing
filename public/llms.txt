@@ -1,0 +1,37 @@
+# MonlooQ
+
+> MonlooQ is a free fashion app for iPhone and Android that combines an AI stylist (Maya AI), virtual try-on on your own photo, a digital closet, and a fashion community.
+
+MonlooQ (also written Monlooq) turns a phone into a personal styling assistant, a digital wardrobe and a social fashion network in one app. It is free to download, rated 13+, and available in English.
+
+## Features
+
+- Maya AI stylist: chat for outfit ideas, fit, colour and fabric advice, occasion planning and capsule wardrobes; can suggest looks built from the user's own closet.
+- Image mode: generate outfit images from a description, edit a photo, restyle a look.
+- Virtual try-on ("Try it on me"): place a garment or full look on the user's own photo while preserving their face, proportions and pose.
+- Digital closet: save, browse and search a wardrobe; multi-select pieces to plan outfits; save favourites and past looks.
+- Discover: Looks, People, Communities and Hashtags; join communities around styles and trends; follow accounts.
+- Reels: a vertical feed of fashion videos, styling tips and community content.
+- Messages: direct messaging with photos, links, files and disappearing messages.
+- Privacy and safety: profile visibility controls, notification preferences, block and report, in-app safety tips.
+- Light and dark mode.
+
+## Download
+
+- [MonlooQ on the App Store (iPhone, iOS 15.6 or later)](https://apps.apple.com/us/app/monlooq/id6804466911)
+- [MonlooQ on Google Play (Android)](https://play.google.com/store/apps/details?id=com.monlooq.app)
+
+## Pages
+
+- [Home](https://monlooq.com/): overview, features and FAQ
+- [Contact and support](https://monlooq.com/contact): contact form for app support, account help, privacy, partnerships and press
+- [Privacy Policy](https://monlooq.com/privacy)
+- [Terms of Service](https://monlooq.com/terms)
+- [Cookie Policy](https://monlooq.com/cookies)
+- [Data Protection](https://monlooq.com/data-protection)
+
+## Contact
+
+- Email: support@monlooq.com
+- Instagram: https://www.instagram.com/monlooq
+- TikTok: https://www.tiktok.com/@monlooq
