@@ -5,6 +5,7 @@ import {
   Faq,
   Features,
   Hero,
+  Lookbook,
   Marquee,
   Maya,
 } from "@/components/home/sections";
@@ -62,6 +63,7 @@ export default function HomePage() {
       <Marquee />
       <Maya />
       <Features />
+      <Lookbook />
       <Community />
       <Faq />
       <Download />

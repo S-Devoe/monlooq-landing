@@ -11,9 +11,18 @@ import {
   Users,
   Wand2,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { PhoneMockup } from "@/components/home/phone-mockup";
+import crewPortrait from "@/components/monlooq-images/monlooq-eight.jpeg";
+import collageTribe from "@/components/monlooq-images/monlooq-five.jpeg";
+import friendsLaughing from "@/components/monlooq-images/monlooq-four.jpeg";
+import communityCard from "@/components/monlooq-images/monlooq-nine.jpeg";
+import collageEditorial from "@/components/monlooq-images/monlooq-one.jpeg";
+import mayaScreen from "@/components/monlooq-images/monlooq-seven.jpeg";
+import couplePhone from "@/components/monlooq-images/monlooq-three.jpeg";
+import collageFeatures from "@/components/monlooq-images/monlooq-two.jpeg";
 import { StoreBadges } from "@/components/store-badges";
 import { faqs, features } from "@/lib/content";
 
@@ -68,19 +77,46 @@ export function Hero() {
         </div>
 
         <div className="animate-rise stagger-3 relative">
-          <div className="animate-float">
+          {/* Editorial photos tucked behind the phone. Decorative here; the
+              same people appear with real alt text further down the page. */}
+          <div
+            aria-hidden="true"
+            className="absolute top-4 right-0 hidden w-[50%] rotate-[5deg] overflow-hidden rounded-[2rem] shadow-2xl sm:block lg:right-[-6%]"
+          >
+            <Image
+              src={crewPortrait}
+              alt=""
+              preload
+              placeholder="blur"
+              sizes="(min-width: 1024px) 22vw, 45vw"
+              className="aspect-[4/5] h-auto w-full object-cover"
+            />
+          </div>
+          <div
+            aria-hidden="true"
+            className="absolute bottom-0 left-0 hidden w-[42%] rotate-[-6deg] overflow-hidden rounded-[1.75rem] shadow-2xl sm:block lg:left-[-4%]"
+          >
+            <Image
+              src={friendsLaughing}
+              alt=""
+              placeholder="blur"
+              sizes="(min-width: 1024px) 18vw, 38vw"
+              className="aspect-[4/5] h-auto w-full object-cover"
+            />
+          </div>
+          <div className="animate-float relative z-10">
             <PhoneMockup />
           </div>
           {/* Editorial sticker */}
           <div
             aria-hidden="true"
-            className="absolute top-6 left-[4%] hidden rotate-[-8deg] rounded-full border border-foreground bg-background px-4 py-2 font-heading text-sm font-semibold shadow-lg sm:block lg:left-[-2%]"
+            className="absolute top-6 left-[4%] z-20 hidden rotate-[-8deg] rounded-full border border-foreground bg-background px-4 py-2 font-heading text-sm font-semibold shadow-lg sm:block lg:left-[-2%]"
           >
             Meet Maya
           </div>
           <div
             aria-hidden="true"
-            className="absolute right-[2%] bottom-16 hidden rotate-[6deg] rounded-2xl bg-brand px-4 py-3 text-brand-foreground shadow-xl sm:block lg:right-[-4%]"
+            className="absolute right-[2%] bottom-16 z-20 hidden rotate-[6deg] rounded-2xl bg-brand px-4 py-3 text-brand-foreground shadow-xl sm:block lg:right-[-4%]"
           >
             <p className="eyebrow opacity-80">Try it on me</p>
             <p className="mt-1 font-heading text-lg font-semibold">
@@ -181,6 +217,13 @@ export function Maya() {
             about colour, silhouette, fabric and occasion, not generic, and she
             works with the clothes you already own.
           </p>
+          <Image
+            src={mayaScreen}
+            alt="Maya AI in the MonlooQ app asking what you are dressing for, with looks for work, date night, travel and events"
+            placeholder="blur"
+            sizes="(min-width: 1024px) 28rem, (min-width: 640px) 28rem, 100vw"
+            className="mt-10 aspect-square h-auto w-full max-w-md rounded-3xl object-cover shadow-xl"
+          />
         </div>
 
         <ol className="divide-y border-y">
@@ -296,6 +339,66 @@ export function Features() {
   );
 }
 
+/* -------------------------------------------------------------- Lookbook */
+
+export function Lookbook() {
+  return (
+    <section
+      id="lookbook"
+      aria-labelledby="lookbook-title"
+      className="container-x py-24 lg:py-32"
+    >
+      <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div>
+          <p className="eyebrow text-brand">Lookbook</p>
+          <h2
+            id="lookbook-title"
+            className="mt-5 max-w-3xl text-5xl leading-[0.95] font-semibold tracking-tight sm:text-6xl"
+          >
+            Style that starts in your{" "}
+            <span className="font-light text-brand italic">pocket</span>
+          </h2>
+        </div>
+        <p className="max-w-sm leading-7 text-muted-foreground">
+          Build your closet, ask Maya for a look and share it with people who
+          dress like you.
+        </p>
+      </div>
+
+      <figure className="mt-14 overflow-hidden rounded-[2rem] border">
+        <Image
+          src={collageEditorial}
+          alt="MonlooQ lookbook: tailored neutrals, a rust overcoat, outfits arranged on a phone, a clothing rail and the closet on laptop and phone"
+          placeholder="blur"
+          sizes="(min-width: 1280px) 1200px, 100vw"
+          className="h-auto w-full"
+        />
+      </figure>
+
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        <figure className="overflow-hidden rounded-[2rem] border">
+          <Image
+            src={collageFeatures}
+            alt="MonlooQ features: build your digital closet, an AI stylist for every occasion, outfit inspiration and a global fashion community"
+            placeholder="blur"
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="h-auto w-full"
+          />
+        </figure>
+        <figure className="overflow-hidden rounded-[2rem] border">
+          <Image
+            src={collageTribe}
+            alt="MonlooQ screens: your digital wardrobe, an AI stylist in your pocket and style communities such as streetwear, luxury, Afrocentric and minimalist"
+            placeholder="blur"
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="h-auto w-full"
+          />
+        </figure>
+      </div>
+    </section>
+  );
+}
+
 /* ------------------------------------------------------------- Community */
 
 const discover = [
@@ -339,6 +442,23 @@ export function Community() {
         Looks, people and communities that{" "}
         <span className="font-light text-brand italic">get your style</span>
       </h2>
+
+      <div className="mt-14 grid gap-4 sm:grid-cols-2">
+        <Image
+          src={communityCard}
+          alt="A group of friends laughing together, with a MonlooQ prompt to join a community and share looks"
+          placeholder="blur"
+          sizes="(min-width: 640px) 50vw, 100vw"
+          className="aspect-square h-auto w-full rounded-[2rem] object-cover"
+        />
+        <Image
+          src={couplePhone}
+          alt="Two friends browsing outfits together on a phone"
+          placeholder="blur"
+          sizes="(min-width: 640px) 50vw, 100vw"
+          className="aspect-square h-auto w-full rounded-[2rem] object-cover"
+        />
+      </div>
 
       <ul className="mt-16 grid border-t sm:grid-cols-2 lg:grid-cols-4">
         {discover.map((d) => (
